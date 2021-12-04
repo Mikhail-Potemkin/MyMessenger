@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,6 +12,8 @@ namespace MyMessenger
 {
     class MessengerClientAPI
     {
+        private static readonly HttpClient client = new HttpClient();
+
         public void TestNewtonsoftJson()
         {
             //Тест JSon SerializeObject NewtonSoft
@@ -19,11 +22,6 @@ namespace MyMessenger
             Console.WriteLine(output);
             Message deserializedMsg = JsonConvert.DeserializeObject<Message>(output);
             Console.WriteLine(deserializedMsg);
-            string path = @"c:\TempFiles\Messages\ser.txt";
-            using (StreamWriter sw = new StreamWriter(path, false, System.Text.Encoding.Default))
-            {
-                sw.WriteLine(output);
-            }
         }
         public Message GetMessage(int MessageId)
         {
@@ -40,6 +38,16 @@ namespace MyMessenger
             if ((status.ToLower() == "ok") && (responseFromServer != "Not Found"))
             {
                 Message deserializedMsg = JsonConvert.DeserializeObject<Message>(responseFromServer);
+                return deserializedMsg;
+            }
+            return null;
+        }
+        public async Task<Message> GetMessageHTTPAsync(int MessageID)
+        {
+            var responseString = await client.GetStringAsync("http://localhost:5000/api/Messenger/");
+            if (responseString != null)
+            {
+                Message deserializedMsg = JsonConvert.DeserializeObject<Message>(responseString);
                 return deserializedMsg;
             }
             return null;
