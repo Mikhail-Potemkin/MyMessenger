@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASPCoreServer", "..\ASPCore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsClient", "..\WindowsFormsClient\WindowsFormsClient.csproj", "{2A3AE8DD-B99E-4F48-A440-C02A10E7D15E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleMessengerWithGUI", "..\ConsoleMessengerWithGUI\ConsoleMessengerWithGUI.csproj", "{AFBF9C94-4A31-4715-8877-E3DCAF6032B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{2A3AE8DD-B99E-4F48-A440-C02A10E7D15E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A3AE8DD-B99E-4F48-A440-C02A10E7D15E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A3AE8DD-B99E-4F48-A440-C02A10E7D15E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFBF9C94-4A31-4715-8877-E3DCAF6032B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFBF9C94-4A31-4715-8877-E3DCAF6032B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFBF9C94-4A31-4715-8877-E3DCAF6032B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFBF9C94-4A31-4715-8877-E3DCAF6032B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
